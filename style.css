@@ -6,6 +6,8 @@
 	border: 1px solid darkgray;
 }
 
+
+/* Animation delay */
 .animate {
 	height: 6em;
 	width: 10em;
@@ -17,6 +19,9 @@
 	background: rgb(211, 220, 211);
 	border-color: rgb(94, 53, 53);
 }
+
+
+/* Timing-funktioner */
 /* Specificitet: poäng i kategorierna id, klass, element.
 Pseudoklasser: :hover, :active, :nth-child
 Pseudoelement: ::before, ::after
@@ -42,6 +47,8 @@ Pseudoelement: ::before, ::after
 .ease-out { transition-timing-function: ease-out; }
 .ease-both { transition-timing-function: ease-in-out; }
 
+
+/* Animera flex-grow */
 .flexbox {
 	display: flex;
 	flex-direction: row;
@@ -57,3 +64,4 @@ Pseudoelement: ::before, ::after
 	flex-grow: 2;
 	background-color: rgb(90, 151, 90);
 }
+
