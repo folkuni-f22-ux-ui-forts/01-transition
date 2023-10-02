@@ -17,8 +17,12 @@
 	background: rgb(211, 220, 211);
 	border-color: rgb(94, 53, 53);
 }
-
-.container.timing > * {
+/* Specificitet: poäng i kategorierna id, klass, element.
+Pseudoklasser: :hover, :active, :nth-child
+Pseudoelement: ::before, ::after
+ */
+ /* 020 */
+.timing > * {
 	width: 3em;
 	height: 3em;
 	background-color: rgb(78, 107, 192);
@@ -28,9 +32,11 @@
 	left: 0%;
 	transition: all 1.5s linear;
 }
+/* 020 */
 .timing:hover > * {
 	left: calc(100% - 3em - 2px - 0.2em);
 }
+/* 010 (0 id, 1 klass, 0 element */
 .linear { transition-timing-function: linear; }
 .ease-in { transition-timing-function: ease-in; }
 .ease-out { transition-timing-function: ease-out; }
