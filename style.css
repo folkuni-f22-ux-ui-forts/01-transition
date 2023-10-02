@@ -41,3 +41,19 @@ Pseudoelement: ::before, ::after
 .ease-in { transition-timing-function: ease-in; }
 .ease-out { transition-timing-function: ease-out; }
 .ease-both { transition-timing-function: ease-in-out; }
+
+.flexbox {
+	display: flex;
+	flex-direction: row;
+}
+.flexbox > * {
+	height: 2em;
+	border: 1px solid rgb(5, 25, 5);
+	background-color: rgb(59, 119, 59);
+	transition: all 1s;
+	flex-grow: 1;
+}
+.flexbox > :hover {
+	flex-grow: 2;
+	background-color: rgb(90, 151, 90);
+}
