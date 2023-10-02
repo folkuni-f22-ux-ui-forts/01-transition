@@ -65,3 +65,35 @@ Pseudoelement: ::before, ::after
 	background-color: rgb(90, 151, 90);
 }
 
+
+/* Transform */
+.transform {
+	margin-top: 1em;
+	border: 2px solid rgb(59, 8, 55);
+	width: 8em;
+	height: 4em;
+	padding: 0.2em;
+}
+.percent {
+	background-color: rgb(152, 68, 177);
+	height: 100%;
+	text-align: center;
+}
+.percent, .skew, .scale {
+	transition: transform 1s ease-out;
+}
+.transform:hover .percent {
+	transform: translateY(-50%);
+}
+/* Idag: bästa sättet att centrera är med display:grid och place-items:center */
+
+.skew, .scale {
+	border: 1px solid gray;
+}
+.transform:hover .skew {
+	transform: skew(-30deg);
+}
+.transform:hover .scale {
+	transform: scale(1.5, 0.5);
+}
+
