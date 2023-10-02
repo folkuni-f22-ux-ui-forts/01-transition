@@ -1,0 +1,75 @@
+.container {
+	padding: 0.4em;
+	border: 2px solid gray;
+}
+
+.speedy {
+	transition: all 3s;
+	transform-origin: top;
+	height: 3em;
+}
+
+.container:hover .speedy {
+	/* transform: skew(30deg) translateX(30em); */
+	animation: follow-through 2s linear;
+	transform: translateX(30em);
+}
+@keyframes follow-through {
+	0% {
+		transform: translateX(0em);
+	}
+	10% {
+		transform: skew(30deg)  translateX(3em);
+	}
+	90% {
+		transform: skew(30deg)  translateX(30em);
+	}
+	95% {
+		transform: skew(-15deg) translateX(30em);
+	}
+	100% {
+		transform: skew(0deg)   translateX(30em);
+	}
+}
+
+
+/* För att göra en båge (arc) behöver vi två rörelser: x och y samtidigt */
+.container .ball {
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+	background-color: rgb(141, 96, 41);
+	position: relative;
+	left: 0em;
+}
+.container:hover .ball {
+	/* Linjär rörelse i x-led, olika rörelser i y-led */
+	animation: arc-x 2s linear, arc-y 2s;
+	left: 20em;
+}
+
+@keyframes arc-y {
+	0% {
+		/* På vägen upp används en timing-funktion som liknar ease-out, saktar ner nära toppen. Vi använder olika timing-funktioner för olika delar av rörelsen. */
+		animation-timing-function: cubic-bezier(.22, .77, .7, .95);
+		transform: translateY(0em);
+	}
+	50% {
+		/* På vägen ner används en timing-funktion som liknar ease-in, ökar fart ju längre den faller. */
+		animation-timing-function: cubic-bezier(.88, .13, .88, .84);
+		transform: translateY(-8em);
+	}
+	100% {
+		transform: translateY(0em);
+	}
+}
+@keyframes arc-x {
+	/* 0% { transform: translateX(0em); }
+	100% { transform: translateX(30em); } */
+	0% { left: 0em; }
+	100% { left: 20em; }
+}
+
+/* Ett exempel på studs med deformation här:
+https: //codepen.io/david-zocom/pen/xxzdbBB?editors=0100
+*/
